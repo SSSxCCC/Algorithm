@@ -1,10 +1,10 @@
+import java.util.Arrays;
+
 public class QuickSort {
     public static void main(String[] args) {
         int[] a = new int[] { 3, 4, 2, 1, 5 };
         quickSort(a);
-        for (int x : a) {
-            System.out.println(x + " ");
-        }
+        System.out.println(Arrays.toString(a));
     }
 
     public static void quickSort(int[] a) {
