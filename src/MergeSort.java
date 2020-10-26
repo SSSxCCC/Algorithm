@@ -4,40 +4,38 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] a = new int[] { 3, 4, 2, 1, 5 };
         mergeSort(a);
-        for (int x : a) {
-            System.out.println(x + " ");
-        }
+        System.out.println(Arrays.toString(a));
     }
 
     public static void mergeSort(int[] a) {
-        int[] b = Arrays.copyOf(a, a.length);
-        mergeSort(a, 0, a.length - 1, b);
-        System.arraycopy(b, 0, a, 0, a.length);
+        int[] t = new int[a.length];
+        mergeSort(a, 0, a.length - 1, t);
     }
 
-    public static void mergeSort(int[] a, int left, int right, int[] b) {
-        if (left > right) {
+    public static void mergeSort(int[] a, int left, int right, int[] t) {
+        if (left >= right) {
             return;
         }
 
         int middle = (left + right) / 2;
-        mergeSort(a, left, middle, b);
-        mergeSort(a, middle + 1, right, b);
-        merge(a, left, middle, right, b);
+        mergeSort(a, left, middle, t);
+        mergeSort(a, middle + 1, right, t);
+        merge(a, left, middle, right, t);
     }
 
-    public static void merge(int[] a, int left, int middle, int right, int[] b) {
+    public static void merge(int[] a, int left, int middle, int right, int[] t) {
         for (int i = left, l = left, r = middle + 1; i <= right; i++) {
             if (l > middle) {
-                b[i] = a[r];
-                r++;
+                t[i] = a[r++];
             } else if (r > right) {
-                b[i] = a[l];
-                l++;
-            } else if (a[]) {
-
+                t[i] = a[l++];
+            } else if (a[l] <= a[r]) {
+                t[i] = a[l++];
+            } else { // a[l] > a[r]
+                t[i] = a[r++];
             }
-
         }
+
+        System.arraycopy(t, left, a, left, right - left + 1);
     }
 }
