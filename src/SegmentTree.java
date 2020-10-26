@@ -2,20 +2,20 @@
 public class SegmentTree {
 
     public static void main(String[] args) {
-        SegmentTree segmentTree = new SegmentTree(5);
+        SegmentTree st = new SegmentTree(5);
         int[] a = new int[] { 0, 0, 1, 3 };
         for (int x : a) {
-            segmentTree.add(x);
+            st.add(x);
         }
         for (int i = 0; i < 5; i++) {
-            System.out.print(segmentTree.get(i) + " ");  // 2 1 0 1 0
+            System.out.print(st.get(i) + " ");  // 2 1 0 1 0
         }
         System.out.println();
-        System.out.println(segmentTree.get(0, 1) + " " +  // 3 3 4 4 2
-                segmentTree.get(0, 2) + " " +
-                segmentTree.get(0, 3) + " " +
-                segmentTree.get(0, 4) + " " +
-                segmentTree.get(1, 3));
+        System.out.println(st.get(0, 1) + " " +  // 3 3 4 4 2
+                st.get(0, 2) + " " +
+                st.get(0, 3) + " " +
+                st.get(0, 4) + " " +
+                st.get(1, 3));
     }
 
     private int[] nodes;
@@ -23,7 +23,7 @@ public class SegmentTree {
 
     public SegmentTree(int size) {
         this.size = size;
-        nodes = new int[size * 2 - 1];
+        nodes = new int[size * 4];
     }
 
     public void add(int value) {
@@ -31,14 +31,17 @@ public class SegmentTree {
     }
 
     private void add(int value, int ni, int left, int right) {
-        if (ni >= nodes.length || value < left || value > right) {
+        if (value < left || value > right) {
             return;
         }
 
         nodes[ni]++;
-        int middle = (left + right) / 2;
-        add(value, ni * 2 + 1, left, middle);
-        add(value, ni * 2 + 2, middle + 1, right);
+
+        if (left < right) {
+            int middle = (left + right) / 2;
+            add(value, ni * 2 + 1, left, middle);
+            add(value, ni * 2 + 2, middle + 1, right);
+        }
     }
 
     public int get(int value) {
@@ -50,14 +53,14 @@ public class SegmentTree {
     }
 
     private int get(int min, int max, int ni, int left, int right) {
-        if (min <= left && max >= right) {
+        if (min <= left && right <= max) {
             return nodes[ni];
         } else if (min > right || max < left) {
             return 0;
+        } else { // left < right
+            int middle = (left + right) / 2;
+            return get(min, max, ni * 2 + 1, left, middle) +
+                    get(min, max, ni * 2 + 2, middle + 1, right);
         }
-
-        int middle = (left + right) / 2;
-        return get(min, max, ni * 2 + 1, left, middle) +
-                get(min, max, ni * 2 + 2, middle + 1, right);
     }
 }
