@@ -1,23 +1,6 @@
 
 public class SegmentTree {
 
-    public static void main(String[] args) {
-        SegmentTree st = new SegmentTree(5);
-        int[] a = new int[] { 0, 0, 1, 3 };
-        for (int x : a) {
-            st.add(x);
-        }
-        for (int i = 0; i < 5; i++) {
-            System.out.print(st.get(i) + " ");  // 2 1 0 1 0
-        }
-        System.out.println();
-        System.out.println(st.get(0, 1) + " " +  // 3 3 4 4 2
-                st.get(0, 2) + " " +
-                st.get(0, 3) + " " +
-                st.get(0, 4) + " " +
-                st.get(1, 3));
-    }
-
     private int[] nodes;
     private int size;
 
@@ -62,5 +45,22 @@ public class SegmentTree {
             return get(min, max, ni * 2 + 1, left, middle) +
                     get(min, max, ni * 2 + 2, middle + 1, right);
         }
+    }
+
+    public static void main(String[] args) {
+        SegmentTree st = new SegmentTree(5);
+        int[] a = new int[] { 0, 0, 1, 3 };
+        for (int x : a) {
+            st.add(x);
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.print(st.get(i) + " ");  // 2 1 0 1 0
+        }
+        System.out.println();
+        System.out.println(st.get(0, 1) + " " +  // 3 3 4 4 2
+                st.get(0, 2) + " " +
+                st.get(0, 3) + " " +
+                st.get(0, 4) + " " +
+                st.get(1, 3));
     }
 }

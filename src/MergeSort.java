@@ -1,11 +1,6 @@
 import java.util.Arrays;
 
 public class MergeSort {
-    public static void main(String[] args) {
-        int[] a = new int[] { 3, 4, 2, 1, 5 };
-        mergeSort(a);
-        System.out.println(Arrays.toString(a));
-    }
 
     public static void mergeSort(int[] a) {
         int[] t = new int[a.length];
@@ -37,5 +32,11 @@ public class MergeSort {
         }
 
         System.arraycopy(t, left, a, left, right - left + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[] { 3, 4, 2, 1, 5 };
+        mergeSort(a);
+        System.out.println(Arrays.toString(a));
     }
 }

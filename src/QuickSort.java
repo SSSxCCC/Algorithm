@@ -1,11 +1,6 @@
 import java.util.Arrays;
 
 public class QuickSort {
-    public static void main(String[] args) {
-        int[] a = new int[] { 3, 4, 2, 1, 5 };
-        quickSort(a);
-        System.out.println(Arrays.toString(a));
-    }
 
     public static void quickSort(int[] a) {
         quickSort(a, 0, a.length - 1);
@@ -43,5 +38,11 @@ public class QuickSort {
         int t = a[i];
         a[i] = a[j];
         a[j] = t;
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[] { 3, 4, 2, 1, 5 };
+        quickSort(a);
+        System.out.println(Arrays.toString(a));
     }
 }
