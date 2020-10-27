@@ -13,7 +13,9 @@ public class Trie {
         Node current = root;
         for (int i = 0, len = s.length(); i < len; i++) {
             char c = s.charAt(i);
-            current.children.putIfAbsent(c, new Node());
+            if (!current.children.containsKey(c)) {
+                current.children.put(c, new Node());
+            }
             current = current.children.get(c);
         }
         current.word = s;
