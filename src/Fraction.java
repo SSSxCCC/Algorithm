@@ -4,8 +4,8 @@ public class Fraction implements Comparable<Fraction> {
     public static final Fraction POSITIVE_INFINITE = new Fraction(1, 0);
     public static final Fraction NEGATIVE_INFINITE = new Fraction(-1, 0);
 
-    private final int numerator;
-    private final int denominator;
+    public final int numerator;
+    public final int denominator;
 
     public Fraction(int numerator, int denominator) {
         if (numerator == 0 && denominator == 0) {
@@ -167,11 +167,11 @@ public class Fraction implements Comparable<Fraction> {
         System.out.println(result);
 
 
-        answer = "  2/3 -1/6  1/3  1/0 -1/0\n" +
-                 " -1/6 -1/1 -1/2  1/0 -1/0\n" +
-                 "  1/3 -1/2  0/1  1/0 -1/0\n" +
-                 "  1/0  1/0  1/0  1/0  0/1\n" +
-                 " -1/0 -1/0 -1/0  0/1 -1/0\n";
+        answer = "  1/9 -1/6  0/1  1/0 -1/0\n" +
+                 " -1/6  1/4  0/1 -1/0  1/0\n" +
+                 "  0/1  0/1  0/1  0/1  0/1\n" +
+                 "  1/0 -1/0  0/1  1/0 -1/0\n" +
+                 " -1/0  1/0  0/1 -1/0  1/0\n";
         result = "";
         for (Fraction f1 : fs) {
             for (Fraction f2 : fs) {
