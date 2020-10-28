@@ -182,5 +182,22 @@ public class Fraction implements Comparable<Fraction> {
         }
         System.out.println("---------multiply---------" + answer.equals(result));
         System.out.println(result);
+
+
+        answer = "  0  1  1 -1  1\n" +
+                 " -1  0 -1 -1  1\n" +
+                 " -1  1  0 -1  1\n" +
+                 "  1  1  1  0  1\n" +
+                 " -1 -1 -1 -1  0\n";
+        result = "";
+        for (Fraction f1 : fs) {
+            for (Fraction f2 : fs) {
+                int cmp = f1.compareTo(f2);
+                result += (cmp < 0 ? " " : "  ") + cmp;
+            }
+            result += "\n";
+        }
+        System.out.println("--------compareTo--------" + answer.equals(result));
+        System.out.println(result);
     }
 }
