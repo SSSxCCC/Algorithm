@@ -16,11 +16,11 @@
 
 字典树Trie：字符串去重
 
-线段树SegmentTree：求区间总数/最大/最小数
-
-Zkw线段树ZkwSegmentTree：线段树的优化
-
 树状数组BinaryIndexedTree：求区间数字和
+
+线段树SegmentTree：树状数组的升级版，求区间总数/最大/最小数
+
+Zkw线段树ZkwSegmentTree：线段树的优化版
 
 ### java自带：
 
