@@ -30,7 +30,7 @@
 
 [Zkw线段树ZkwSegmentTree](https://blog.csdn.net/SSSxCCC/article/details/114271688)
 
-字符串匹配KnuthMorrisPratt
+[字符串匹配KnuthMorrisPratt](https://blog.csdn.net/SSSxCCC/article/details/116089704)
 
 ### java自带：
 
