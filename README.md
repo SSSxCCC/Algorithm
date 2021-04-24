@@ -30,6 +30,8 @@
 
 [Zkw线段树ZkwSegmentTree](https://blog.csdn.net/SSSxCCC/article/details/114271688)
 
+字符串匹配KnuthMorrisPratt
+
 ### java自带：
 
 哈希表HashMap、HashSet：快速映射去重，重写equals和hashcode

@@ -17,6 +17,7 @@
  * (15)1111 15+14+12+8
  */
 public class BinaryIndexedTree {
+
     private int[] a;
     private int[] tree;
 
