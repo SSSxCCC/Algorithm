@@ -28,7 +28,7 @@
 
 [线段树SegmentTree](https://blog.csdn.net/SSSxCCC/article/details/114271351)
 
-[Zkw线段树ZkwSegmentTree](https://blog.csdn.net/SSSxCCC/article/details/139480935)
+[Zkw线段树ZkwSegmentTree](https://blog.csdn.net/SSSxCCC/article/details/114271688)
 
 [字符串匹配KnuthMorrisPratt](https://blog.csdn.net/SSSxCCC/article/details/116089704)
 
